@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2012-06-22 21:43:27</creation_date>
-			<updated_date>2021-08-04 16:24:48</updated_date>
+			<updated_date>2021-08-05 15:20:58</updated_date>
 			<model_property>
 				<name>Project Name</name>
 				<value></value>
@@ -222,7 +222,7 @@
 		</word>
 		<word>
 			<id>3</id>
-			<length>100</length>
+			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -234,7 +234,7 @@
 			<description>id</description>
 			<logical_name>pid</logical_name>
 			<physical_name>pid</physical_name>
-			<type>varchar(n)</type>
+			<type>integer</type>
 		</word>
 		<word>
 			<id>4</id>
@@ -301,7 +301,7 @@
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-					<type>varchar(n)</type>
+					<type>integer</type>
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>

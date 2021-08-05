@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/fluent_mybatis?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
