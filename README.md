@@ -204,5 +204,5 @@ public class App {
 
 5. 验证效果
 
-![avater](/Users/mac/Library/Application Support/typora-user-images/image-20210805160329087.png)
+![avater](https://tva1.sinaimg.cn/large/008i3skNly1gt5z5d81tfj31cf0u0gon.jpg)
 
