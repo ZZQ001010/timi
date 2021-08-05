@@ -17,6 +17,14 @@
 
 
     <dependencies>
- 
+            <dependency>
+                <groupId>com.github</groupId>
+                <artifactId>timi-meta</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        <dependency>
+            <groupId>freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
     </dependencies>
 </project>
