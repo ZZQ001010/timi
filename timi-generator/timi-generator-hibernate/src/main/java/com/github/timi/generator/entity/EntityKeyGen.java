@@ -8,6 +8,7 @@
  */
 package com.github.timi.generator.entity;
 
+import com.github.entity.Configuration;
 import com.github.meta.Column;
 import com.github.meta.Database;
 import com.github.meta.Table;
@@ -59,7 +60,7 @@ public class EntityKeyGen extends AbsClassGenerator {
 	 * @see com.sunline.ark.maven.generator.IGenerator#generateFiles()
 	 */
 	@Override
-	public void generateFiles() {
+	public void generateFiles(Configuration config, List<Database> source, Log log) {
 		for (Table table : database.getTables()) {
 			if (table.getPrimaryKeyColumns().size() > 1) {
 				this.table = table;

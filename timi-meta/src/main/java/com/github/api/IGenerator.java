@@ -1,8 +1,13 @@
 package com.github.api;
 
 
+import com.github.entity.Configuration;
+import com.github.meta.Database;
+import org.apache.maven.plugin.logging.Log;
 
-/** 
+import java.util.List;
+
+/**
  * ClassName：IGenerator <br/>
  * Description：文件生成接口 <br/>
  * Date：   2016年12月27日 上午11:13:31 <br/>
@@ -17,6 +22,6 @@ public interface IGenerator {
      * @author yanghm<br/>
      * <br/>
      */
-    public void generateFiles();
+    void generateFiles(Configuration config, List<Database> source, Log log);
     
 }

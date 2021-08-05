@@ -1,5 +1,6 @@
 package com.github.timi.generator.entity;
 
+import com.github.entity.Configuration;
 import com.github.meta.Column;
 import com.github.meta.Database;
 import com.github.meta.Table;
@@ -10,6 +11,7 @@ import org.apache.maven.plugin.logging.Log;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -45,7 +47,7 @@ public class BEntityGen extends AbsClassGenerator {
 	 * @see com.sunline.ark.maven.generator.IGenerator#generateFiles()
 	 */
 	@Override
-	public void generateFiles() {
+	public void generateFiles(Configuration config, List<Database> source, Log log) {
 		for (Table table : database.getTables()) {
 			this.table = table;
 			this.generateFile();

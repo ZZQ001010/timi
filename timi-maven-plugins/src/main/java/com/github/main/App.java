@@ -74,13 +74,20 @@ public class App extends AbstractMojo {
         checkMode(mode);
         Configuration config = configuration();
         switch (mode) {
-            case MYBATIS: new MybatisProcessor().process(config, project, getLog());
+            case MYBATIS:
+                try {
+                    new MybatisProcessor().process(config, project, getLog());
+                } catch (DocumentException e) {
+                    e.printStackTrace();
+                }
+                break;
             case HIBERNATE:
                 try {
                     new HibernateProcessor().process(config, project, getLog());
                 } catch (DocumentException e) {
                     e.printStackTrace();
                 }
+                break;
         }
     }
     

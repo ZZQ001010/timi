@@ -8,6 +8,7 @@
  */
 package com.github.timi.generator.entity;
 
+import com.github.entity.Configuration;
 import com.github.meta.Column;
 import com.github.meta.Database;
 import com.github.meta.Table;
@@ -56,7 +57,7 @@ public class REntityGen extends AbsClassGenerator {
 	 * @see com.sunline.ark.maven.generator.IGenerator#generateFiles()
 	 */
 	@Override
-	public void generateFiles() {
+	public void generateFiles(Configuration config, List<Database> source, Log log) {
 		for (Table table : database.getTables()) {
 			this.table = table;
 			this.generateFile();
