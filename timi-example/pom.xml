@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>timi-parent</artifactId>
+        <groupId>com.github</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <artifactId>timi-example</artifactId>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github</groupId>
+                <artifactId>timi-maven-plugins</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>entity</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sources>
+                        <source>ccs.erm</source>
+                    </sources>
+                    <generateOption>OnlyBO</generateOption><!-- 生成类型，只生成BO -->
+                    <parameterPackages>
+                        <parameterPackage>cn.sunline.ccs.definition.enums</parameterPackage>
+                        <parameterPackage>cn.sunline.ppy.dictionary.enums</parameterPackage>
+                    </parameterPackages>
+                    <basePackage>com.github.infrastructure</basePackage>
+                    <outputDirectory>${basedir}/target/generated-sources</outputDirectory>
+                    <useAutoTrimType>false</useAutoTrimType>
+                    <mode>HIBERNATE</mode>
+                </configuration>
+                <dependencies>
+                
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <dependencies>
+                
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>com.mysema.maven</groupId>
+                <artifactId>apt-maven-plugin</artifactId>
+                <version>1.1.3</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.querydsl</groupId>
+                        <artifactId>querydsl-apt</artifactId>
+                        <version>${querydsl.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.querydsl</groupId>
+                        <artifactId>querydsl-jpa</artifactId>
+                        <classifier>apt</classifier>
+                        <version>${querydsl.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputDirectory>${basedir}/target/generated-sources-querydsl</outputDirectory>
+                    <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

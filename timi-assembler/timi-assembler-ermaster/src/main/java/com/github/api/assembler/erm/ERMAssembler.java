@@ -1,8 +1,7 @@
-package com.github.assembler.erm;
+package com.github.api.assembler.erm;
 
-
-import com.github.assembler.IAssembler;
-import com.github.assembler.utils.DomanUtil;
+import com.github.api.IAssembler;
+import com.github.api.assembler.utils.DomanUtil;
 import com.github.meta.Column;
 import com.github.meta.Database;
 import com.github.meta.Domain;
@@ -40,12 +39,12 @@ import org.dom4j.io.SAXReader;
  */
 public class ERMAssembler implements IAssembler {
 	
-		private Log logger;
+	private Log logger;
 
-		public ERMAssembler(Log logger)
-		{
-			this.logger = logger;
-		}
+	public ERMAssembler(Log logger)
+	{
+		this.logger = logger;
+	}
 	
 	private FullyQualifiedJavaType fqjtInteger = new FullyQualifiedJavaType("java.lang.Integer");
 	
@@ -62,7 +61,7 @@ public class ERMAssembler implements IAssembler {
 	private List<String> errorMessage = new ArrayList<String>();
 	
 	@SuppressWarnings("unchecked")
-	public Database assemble(File ermSource, String tablePattern) throws DocumentException {
+	public Database assemble(File ermSource) throws DocumentException {
 		Database result = new Database();
 		
 		// 解析源文件
@@ -374,7 +373,7 @@ public class ERMAssembler implements IAssembler {
 					domain = new Domain();
 					domain.setCode(code);
 					domain.setType(new FullyQualifiedJavaType(basePackage + ".shared.enums."
-							+ com.github.assembler.utils.StringUtils.dbName2ClassName(domain.getCode()) + "Def"));
+							+ com.github.api.assembler.utils.StringUtils.dbName2ClassName(domain.getCode()) + "Def"));
 					domain.setValueMap(new LinkedHashMap<String, String[]>());
 					domain.setIsDef(true);
 					do {

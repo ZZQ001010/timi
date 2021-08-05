@@ -14,6 +14,7 @@
         <module>timi-maven-plugins</module>
         <module>timi-generator</module>
         <module>timi-meta</module>
+        <module>timi-example</module>
     </modules>
     <groupId>com.github</groupId>
     <artifactId>timi-parent</artifactId>
@@ -31,6 +32,7 @@
         <maven-plugin-api.version>3.3.9</maven-plugin-api.version>
         <junit.version>4.12</junit.version>
         <maven-plugin-annotations.version>3.4</maven-plugin-annotations.version>
+        <commons-io.version>2.6</commons-io.version>
     </properties>
     
     <dependencyManagement>
@@ -77,6 +79,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+    
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
             </dependency>
     
             <dependency>

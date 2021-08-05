@@ -1,4 +1,4 @@
-package com.github.assembler.erm;
+package com.github.api.assembler.erm;
 
 import com.github.meta.Database;
 import org.apache.maven.plugin.logging.Log;
@@ -17,7 +17,7 @@ public final class ERMAssemblerTest {
     public void testAssemble() throws DocumentException {
         URL resource = ClassLoader.getSystemClassLoader().getResource("ccs.erm");
         ERMAssembler ermAssembler = new ERMAssembler(log);
-        Database assemble = ermAssembler.assemble(new File(resource.getPath()), null);
+        Database assemble = ermAssembler.assemble(new File(resource.getPath()));
         System.out.println(assemble);
     }
 

@@ -1,4 +1,4 @@
-package com.github.assembler;
+package com.github.api;
 
 
 import com.github.meta.Database;
@@ -16,5 +16,5 @@ import java.io.File;
  */
 public interface IAssembler {
 
-	public Database assemble(File sources, String tablePattern) throws DocumentException;
+	public Database assemble(File sources) throws DocumentException;
 }

@@ -21,11 +21,6 @@
             <artifactId>timi-meta</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>${dom4j.version}</version>
-        </dependency>
         <!-- dom解析需要 -->
         <dependency>
             <groupId>jaxen</groupId>

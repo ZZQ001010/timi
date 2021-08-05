@@ -1,4 +1,4 @@
-package com.github.assembler.utils;
+package com.github.api.assembler.utils;
 
 import org.apache.commons.lang3.CharUtils;
 import org.apache.commons.lang3.text.WordUtils;
