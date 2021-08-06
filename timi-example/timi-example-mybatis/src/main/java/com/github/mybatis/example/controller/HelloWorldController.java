@@ -15,10 +15,10 @@ import java.util.List;
  */
 @RestController
 public class HelloWorldController {
-    
+
     @Autowired
     com.github.infrastructure.mapper.HelloWorldMapper mapper;
-    
+
     @GetMapping("insert")
     public void insert(int start, int end) {
         ArrayList<HelloWorldEntity> helloWorldEntities = new ArrayList<>();
@@ -31,11 +31,11 @@ public class HelloWorldController {
             helloWorldEntities.add(helloWorldEntity);
         } mapper.insertBatch(helloWorldEntities);
     }
-    
+
     @GetMapping("select")
     public List<HelloWorldEntity> select() {
         return mapper.listPoJos(HelloWorldEntity.class,
                 mapper.query().selectAll().where().pid().lt(10).end());
     }
-    
+
 }

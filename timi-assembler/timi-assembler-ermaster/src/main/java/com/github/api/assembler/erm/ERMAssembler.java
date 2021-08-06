@@ -30,6 +30,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import static com.github.constants.JavaType.*;
 
 /**
  * 导入ERMaster的定义文件
@@ -45,14 +46,6 @@ public class ERMAssembler implements IAssembler {
 	{
 		this.logger = logger;
 	}
-	
-	private FullyQualifiedJavaType fqjtInteger = new FullyQualifiedJavaType("java.lang.Integer");
-	
-	private FullyQualifiedJavaType fqjtLong = new FullyQualifiedJavaType("java.lang.Long");
-	
-	private FullyQualifiedJavaType fqjtBigDecimal = new FullyQualifiedJavaType("java.math.BigDecimal");
-	
-	private FullyQualifiedJavaType fqjtDate = new FullyQualifiedJavaType("java.util.Date");
 	
 	private static final Pattern hintPattern = Pattern.compile("\\[\\[.*\\]\\]");
 	
