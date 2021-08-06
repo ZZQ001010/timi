@@ -43,7 +43,18 @@ public class Column {
 	private String propertyName;
 
 	private String id;
-
+	
+	private boolean primaryKey;
+	
+	public boolean getPrimaryKey() {
+		return primaryKey;
+	}
+	
+	
+	public void setPrimaryKey(boolean primaryKey) {
+		this.primaryKey = primaryKey;
+	}
+	
 	public int getLength() {
 		return length;
 	}

@@ -51,6 +51,11 @@
         </dependency>
         <dependency>
             <groupId>com.github</groupId>
+            <artifactId>timi-assembler-dmd</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github</groupId>
             <artifactId>timi-generator-hibernate</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
@@ -87,6 +92,14 @@
                 <configuration>
                     <!-- Needed for Java 5 annotation based configuration, for some reason. -->
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>

@@ -4,6 +4,7 @@ import com.github.constants.Mode;
 import com.github.entity.Configuration;
 import com.github.process.HibernateProcessor;
 import com.github.process.MybatisProcessor;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -11,7 +12,9 @@ import org.apache.maven.project.MavenProject;
 import org.dom4j.DocumentException;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Description：maven代码生成插件入口类 <br/>
@@ -41,7 +44,7 @@ public class App extends AbstractMojo {
      * @parameter
      * @required
      */
-    private File sources[];
+    private File[] sources;
     
     /**
      * @parameter default-value=false
@@ -109,6 +112,14 @@ public class App extends AbstractMojo {
     }
     
     
+    public File[] getSources() {
+        return sources;
+    }
+    
+    public void setSources(File[] sources) {
+        this.sources = sources;
+    }
+    
     public String getBasePackage() {
         return basePackage;
     }
@@ -125,13 +136,7 @@ public class App extends AbstractMojo {
         this.outputDirectory = outputDirectory;
     }
     
-    public File[] getSources() {
-        return sources;
-    }
-    
-    public void setSources(File[] sources) {
-        this.sources = sources;
-    }
+ 
     
     public boolean isTrimStrings() {
         return trimStrings;
