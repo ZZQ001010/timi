@@ -1,5 +1,5 @@
 # timi
-一个解析数据模型生成Entity、Dao、枚举、常量
+一个自动生成dao 枚举，bo的maven插件，便捷开发生成 querydsl或fluentMybatis 相关的代码（支持两种orm框架）
 
 # 快速开始
 
