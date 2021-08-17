@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan({"com.github.infrastructure.mapper"})
+@MapperScan({"com.github.infrastructure.mapper", "com.github.mybatis.example.mapper"})
 @SpringBootApplication
 public class App {
     

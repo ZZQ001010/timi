@@ -1,10 +1,8 @@
 /**
  * Project Name:ark-maven-plugin <br/>
  * File Name:REntityGen.java <br/>
- * Package Name:com.sunline.ark.maven.generator <br/>
  * Date:2016年12月27日下午2:37:31 <br/>
- * Copyright (c) 2016, Sunline All Rights Reserved.
- * 
+ *
  */
 package com.github.timi.generator.entity;
 
@@ -54,7 +52,6 @@ public class REntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#generateFiles()
 	 */
 	@Override
 	public void generateFiles(Configuration config, List<Database> source, Log log) {
@@ -66,7 +63,6 @@ public class REntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initFileName()
 	 */
 	@Override
 	protected String initFileName() {
@@ -75,7 +71,7 @@ public class REntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initFilePath()
+	 * @see .ark.maven.generator.IGenerator#initFilePath()
 	 */
 	@Override
 	protected String initFilePath() {
@@ -86,7 +82,7 @@ public class REntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initTemplate()
+	 * @see .ark.maven.generator.IGenerator#initTemplate()
 	 */
 	@Override
 	protected String initTemplate() {
@@ -95,7 +91,7 @@ public class REntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initData()
+	 * @see .ark.maven.generator.IGenerator#initData()
 	 */
 	@Override
 	protected Map<String, Object> initData() {
@@ -110,7 +106,7 @@ public class REntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.comm.AbsClassGenerator#initImports()
+	 * @see .ark.maven.generator.comm.AbsClassGenerator#initImports()
 	 */
 	@Override
 	protected Set<String> initImports() {

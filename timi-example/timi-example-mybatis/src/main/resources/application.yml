@@ -3,3 +3,19 @@ spring:
     url: jdbc:mysql://localhost:3306/fluent_mybatis?useUnicode=true&characterEncoding=utf8
     username: root
     password: root
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+  type-aliases-package: com.github.springbootmybatis.entity.CreditBill
+server:
+  port: 8081

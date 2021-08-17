@@ -1,7 +1,7 @@
 /**
  * Project Name:ark-maven-plugin <br/>
  * File Name:StringConstant.java <br/>
- * Package Name:com.sunline.ark.maven.freemaker.maker <br/>
+ * Package Name:.ark.maven.freemaker.maker <br/>
  * Date:2016年12月19日下午2:23:00 <br/>
  * Copyright (c) 2016, Sunline All Rights Reserved.
  * 

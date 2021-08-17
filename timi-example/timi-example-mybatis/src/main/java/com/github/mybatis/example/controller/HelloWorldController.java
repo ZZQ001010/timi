@@ -1,6 +1,8 @@
 package com.github.mybatis.example.controller;
 
 import com.github.infrastructure.entity.HelloWorldEntity;
+import com.github.mybatis.example.entity.User;
+import com.github.mybatis.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +20,9 @@ public class HelloWorldController {
 
     @Autowired
     com.github.infrastructure.mapper.HelloWorldMapper mapper;
+    
+    @Autowired
+    UserMapper userMapper;
 
     @GetMapping("insert")
     public void insert(int start, int end) {
@@ -35,7 +40,29 @@ public class HelloWorldController {
     @GetMapping("select")
     public List<HelloWorldEntity> select() {
         return mapper.listPoJos(HelloWorldEntity.class,
-                mapper.query().selectAll().where().pid().lt(10).end());
+                mapper.query().select.yourName().end()
+                        .where().pid().lt(10).end());
     }
+    
+    /**
+     *
+     *   使用原生的mapper
+     */
+    @GetMapping("selectAllUser")
+    public User selectAllUser() {
+        return userMapper.selectAll();
+    }
+    
+    /**
+     *
+     *   mybatis plus
+     *
+     */
+    @GetMapping("selectAllUser2")
+    public User selectAllUser2() {
+        return userMapper.selectAll();
+    }
+    
+    
 
 }

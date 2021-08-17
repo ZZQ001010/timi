@@ -1,7 +1,7 @@
 /**
  * Project Name:ark-maven-plugin <br/>
  * File Name:TEntityGen.java <br/>
- * Package Name:com.sunline.ark.maven.generator <br/>
+ * Package Name:.ark.maven.generator <br/>
  * Date:2016年12月27日下午2:37:31 <br/>
  * Copyright (c) 2016, Sunline All Rights Reserved.
  * 
@@ -61,7 +61,7 @@ public class TEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#generateFiles()
+	 * @see .ark.maven.generator.IGenerator#generateFiles()
 	 */
 	@Override
 	public void generateFiles(Configuration config, List<Database> source, Log log) {
@@ -73,7 +73,7 @@ public class TEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initFileName()
+	 * @see .ark.maven.generator.IGenerator#initFileName()
 	 */
 	@Override
 	protected String initFileName() {
@@ -82,7 +82,7 @@ public class TEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initFilePath()
+	 * @see .ark.maven.generator.IGenerator#initFilePath()
 	 */
 	@Override
 	protected String initFilePath() {
@@ -93,7 +93,7 @@ public class TEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initTemplate()
+	 * @see .ark.maven.generator.IGenerator#initTemplate()
 	 */
 	@Override
 	protected String initTemplate() {
@@ -102,7 +102,7 @@ public class TEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initData()
+	 * @see .ark.maven.generator.IGenerator#initData()
 	 */
 	@Override
 	protected Map<String, Object> initData() {
@@ -119,7 +119,7 @@ public class TEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.comm.AbsClassGenerator#initImports()
+	 * @see .ark.maven.generator.comm.AbsClassGenerator#initImports()
 	 */
 	@Override
 	protected Set<String> initImports() {

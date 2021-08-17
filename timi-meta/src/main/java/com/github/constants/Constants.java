@@ -1,10 +1,8 @@
 /**
  * Project Name:ark-maven-plugin <br/>
  * File Name:Constants.java <br/>
- * Package Name:com.sunline.ark.maven.freemaker <br/>
  * Date:2016年12月26日下午12:17:15 <br/>
- * Copyright (c) 2016, Sunline All Rights Reserved.
- * 
+ *
  */
 package com.github.constants;
 

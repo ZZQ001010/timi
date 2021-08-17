@@ -44,7 +44,6 @@ public class BEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#generateFiles()
 	 */
 	@Override
 	public void generateFiles(Configuration config, List<Database> source, Log log) {
@@ -56,7 +55,6 @@ public class BEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initFileName()
 	 */
 	@Override
 	protected String initFileName() {
@@ -65,7 +63,6 @@ public class BEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initFilePath()
 	 */
 	@Override
 	protected String initFilePath() {
@@ -76,7 +73,6 @@ public class BEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initTemplate()
 	 */
 	@Override
 	protected String initTemplate() {
@@ -85,7 +81,7 @@ public class BEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.IGenerator#initData()
+	 * @see .ark.maven.generator.IGenerator#initData()
 	 */
 	@Override
 	protected Map<String, Object> initData() {
@@ -100,7 +96,7 @@ public class BEntityGen extends AbsClassGenerator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.sunline.ark.maven.generator.comm.AbsClassGenerator#initImports()
+	 * @see .ark.maven.generator.comm.AbsClassGenerator#initImports()
 	 */
 	@Override
 	protected Set<String> initImports() {
