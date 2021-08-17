@@ -44,16 +44,16 @@
         </dependency>
 
     
-        <dependency>
-            <groupId>com.github</groupId>
-            <artifactId>timi-assembler-ermaster</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github</groupId>
-            <artifactId>timi-assembler-dmd</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github</groupId>-->
+<!--            <artifactId>timi-assembler-ermaster</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.github</groupId>-->
+<!--            <artifactId>timi-assembler-dmd</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.github</groupId>
             <artifactId>timi-generator-hibernate</artifactId>

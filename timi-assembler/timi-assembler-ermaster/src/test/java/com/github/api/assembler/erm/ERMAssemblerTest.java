@@ -16,8 +16,8 @@ public final class ERMAssemblerTest {
     @Test
     public void testAssemble() throws DocumentException {
         URL resource = ClassLoader.getSystemClassLoader().getResource("ccs.erm");
-        ERMAssembler ermAssembler = new ERMAssembler(log);
-        Database assemble = ermAssembler.assemble(new File(resource.getPath()));
+        ERMAssembler ermAssembler = new ERMAssembler();
+        Database assemble = ermAssembler.assemble(new File(resource.getPath()), log);
         System.out.println(assemble);
     }
 

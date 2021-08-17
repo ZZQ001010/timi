@@ -1,7 +1,6 @@
 package com.github.process;
 
 import com.github.api.IGenerator;
-import com.github.api.assembler.erm.ERMAssembler;
 import com.github.entity.Configuration;
 import com.github.meta.Database;
 import com.github.timi.generator.entity.BEntityGen;
@@ -9,7 +8,6 @@ import com.github.timi.generator.entity.EntityDefGen;
 import com.github.timi.generator.entity.EntityKeyGen;
 import com.github.timi.generator.entity.REntityGen;
 import com.github.timi.generator.entity.TEntityGen;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.project.MavenProject;

@@ -15,6 +15,7 @@ import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,15 +43,13 @@ import static com.github.constants.DBType.*;
  */
 public final class DMDAssembler implements IAssembler {
     
+    private final static String TYPE = "dmd";
+    
     private Log logger;
     
-    public DMDAssembler(Log logger)
-    {
-        this.logger = logger;
-    }
-    
     @Override
-    public Database assemble(File sources) throws DocumentException {
+    public Database assemble(File sources, Log log) throws DocumentException {
+        this.logger = log;
         SAXReader sar = new SAXReader();
         Document doc = sar.read(sources);
         List<Element> tableElements = doc.selectNodes(TABLE_MARK);
@@ -67,6 +66,11 @@ public final class DMDAssembler implements IAssembler {
         database.setDatabaseType("MYSQL");
         database.setTables(tables);
         return database;
+    }
+    
+    @Override
+    public boolean type(String type) {
+        return TYPE.equals(type);
     }
     
     private Table assembleTable(Element element) {

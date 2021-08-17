@@ -1,10 +1,11 @@
-package com.github.main;
+package com.github;
 
 import com.github.constants.Mode;
 import com.github.entity.Configuration;
 import com.github.process.HibernateProcessor;
 import com.github.process.MybatisProcessor;
-import org.apache.commons.lang3.StringUtils;
+import com.github.utils.CollectionUtils;
+import edu.emory.mathcs.backport.java.util.Collections;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -12,9 +13,7 @@ import org.apache.maven.project.MavenProject;
 import org.dom4j.DocumentException;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Description：maven代码生成插件入口类 <br/>
@@ -45,6 +44,12 @@ public class App extends AbstractMojo {
      * @required
      */
     private File[] sources;
+    
+    /**
+     * @parameter
+     * @required
+     */
+    private String[] supportFileTypes;
     
     /**
      * @parameter default-value=false
@@ -108,6 +113,7 @@ public class App extends AbstractMojo {
         configuration.setSources(sources);
         configuration.setTrimStrings(trimStrings);
         configuration.setUseAutoTrimType(useAutoTrimType);
+        configuration.setSupportFileTypes(CollectionUtils.list(supportFileTypes));
         return configuration;
     }
     

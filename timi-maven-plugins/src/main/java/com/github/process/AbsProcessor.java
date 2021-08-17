@@ -1,11 +1,11 @@
 package com.github.process;
 
-import com.github.api.assembler.erm.ERMAssembler;
+import com.github.api.IAssembler;
 import com.github.entity.Configuration;
 import com.github.meta.Database;
-import com.github.timi.assembler.DMDAssembler;
+import com.github.spi.ComponentLoader;
+import com.github.utils.CollectionUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.model.Resource;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.Log;
@@ -14,8 +14,8 @@ import org.dom4j.DocumentException;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author zzq
@@ -24,6 +24,10 @@ import java.util.List;
 public abstract class AbsProcessor implements Processor {
     
     MavenProject project;
+    
+    private ComponentLoader<IAssembler> assemblerLoader = new ComponentLoader();
+    
+    private Log log ;
     
     protected void buildProejct(Configuration config) {
         project.addCompileSourceRoot(config.getOutputDirectory());
@@ -35,29 +39,42 @@ public abstract class AbsProcessor implements Processor {
         r.setIncludes(in);
         project.addResource(r);
     }
+    
     /**
      * @author zzq
      * @date 2021/8/6 下午5:29
      *
-     *   TODO SPI机制自动的加载所有的assembler
      */
     protected List<Database> assembler(Configuration config, Log log) throws MojoExecutionException, DocumentException {
-        List<Database> databases = new ArrayList<Database>();
-        ERMAssembler assembler = new ERMAssembler(log);
-        DMDAssembler DMDAssembler = new DMDAssembler(log);
-        assembler.setBasePackage(config.getBasePackage());
+        this.log = log;
+        List<Database> databases = new ArrayList<>();
+        List<String> supportFileTypes = config.getSupportFileTypes();
         for (File source : config.getSources()) {
             String ext = FilenameUtils.getExtension(source.getName());
-            if ("dmd".equals(ext)) {
-                 databases.add(DMDAssembler.assemble(source));
-            } else if ("erm".equals(ext)) {
-                 databases.add(assembler.assemble(source));
-            } else {
+            if (!supportFileTypes.contains(ext)) {
                 log.error("不支持的文件扩展名[" + ext + "]");
                 throw new MojoExecutionException("不支持的文件扩展名[" + ext + "]");
             }
+            databases.add(loadAssembler(ext).assemble(source, log));
         }
         return databases;
+    }
+    
+    /**
+     * 根据文件格式（文件后缀）加载对应的类加载器
+     * @return
+     * @author zzq
+     * @date 2021/8/17 下午12:27
+     */
+    private IAssembler loadAssembler(String type) throws MojoExecutionException {
+        List<IAssembler> assemblers = assemblerLoader.load(IAssembler.class).stream()
+                .filter(assembler -> assembler.type(type)).collect(Collectors.toList());
+        if (CollectionUtils.isEmpty(assemblers) || assemblers.size() != 1) {
+            String msg = "文件格式["+ type +"] 预期发现[1]个Assembler但匹配["+ assemblers.size() +"]个，请检查["+ assemblers.toString() +"]的type方法";
+            log.error(msg);
+            throw new MojoExecutionException(msg);
+        }
+        return assemblers.get(0);
     }
     
 }

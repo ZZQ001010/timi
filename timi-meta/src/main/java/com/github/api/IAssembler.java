@@ -2,6 +2,7 @@ package com.github.api;
 
 
 import com.github.meta.Database;
+import org.apache.maven.plugin.logging.Log;
 import org.dom4j.DocumentException;
 
 import java.io.File;
@@ -16,5 +17,7 @@ import java.io.File;
  */
 public interface IAssembler {
 
-	public Database assemble(File sources) throws DocumentException;
+	Database assemble(File sources, Log log) throws DocumentException;
+	
+	boolean type(String type);
 }

@@ -13,8 +13,8 @@ public class DMDAssemblerTest {
     public void testAssemble() throws Exception{
         URL resource = ClassLoader.getSystemClassLoader().getResource("nccsx_cdlfddm.xml");
         File file = new File(resource.getFile());
-        DMDAssembler dmdAssembler = new DMDAssembler(null);
-        Database db = dmdAssembler.assemble(file);
+        DMDAssembler dmdAssembler = new DMDAssembler();
+        Database db = dmdAssembler.assemble(file, null);
         db.getTables().forEach(System.out::println);
     }
 }

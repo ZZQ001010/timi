@@ -40,13 +40,10 @@ import static com.github.constants.JavaType.*;
  */
 public class ERMAssembler implements IAssembler {
 	
+	private final static String TYPE = "erm";
+	
 	private Log logger;
 
-	public ERMAssembler(Log logger)
-	{
-		this.logger = logger;
-	}
-	
 	private static final Pattern hintPattern = Pattern.compile("\\[\\[.*\\]\\]");
 	
 	private String basePackage;
@@ -54,7 +51,8 @@ public class ERMAssembler implements IAssembler {
 	private List<String> errorMessage = new ArrayList<String>();
 	
 	@SuppressWarnings("unchecked")
-	public Database assemble(File ermSource) throws DocumentException {
+	public Database assemble(File ermSource, Log log) throws DocumentException {
+		this.logger = log;
 		Database result = new Database();
 		
 		// 解析源文件
@@ -294,6 +292,10 @@ public class ERMAssembler implements IAssembler {
 			result.getSequences().add(nodeName.getText());
 		
 		return result;
+	}
+	
+	public boolean type(String type) {
+		return TYPE.equals(type);
 	}
 	
 	private Domain parseDomain(String code, String desc) {

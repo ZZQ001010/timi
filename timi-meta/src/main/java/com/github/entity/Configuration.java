@@ -1,7 +1,7 @@
 package com.github.entity;
 
 import java.io.File;
-import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author zzq
@@ -36,6 +36,16 @@ public class Configuration {
      * @parameter default-value=false
      */
     private boolean useAutoTrimType;
+    
+    private List<String> supportFileTypes;
+    
+    public List<String> getSupportFileTypes() {
+        return supportFileTypes;
+    }
+    
+    public void setSupportFileTypes(List<String> supportFileTypes) {
+        this.supportFileTypes = supportFileTypes;
+    }
     
     public String getBasePackage() {
         return basePackage;
