@@ -23,7 +23,6 @@
     <properties>
         <fluent-mybatis.version>1.6.13</fluent-mybatis.version>
         <fluent-generator.version>1.2.4</fluent-generator.version>
-        <freemarker.version>2.3.6</freemarker.version>
         <ibatis.version>1.2.1.681</ibatis.version>
         <maven-plugin-api.version>3.3.9</maven-plugin-api.version>
         <maven-project.version>2.2.1</maven-project.version>
@@ -40,12 +39,6 @@
     
     <dependencyManagement>
         <dependencies>
-            <!-- freemarker依赖 -->
-            <dependency>
-                <groupId>freemarker</groupId>
-                <artifactId>freemarker</artifactId>
-                <version>${freemarker.version}</version>
-            </dependency>
             <!-- Maven插件相关 -->
             <dependency>
                 <groupId>org.apache.maven</groupId>

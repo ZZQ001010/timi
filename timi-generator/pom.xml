@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>timi-generator-mybatis</module>
+        <module>timi-generator-fluent-mybatis</module>
         <module>timi-generator-hibernate</module>
+        <module>timi-generator-mybatisplus</module>
     </modules>
     <artifactId>timi-generator</artifactId>
 
@@ -23,8 +24,8 @@
                 <version>${project.version}</version>
             </dependency>
         <dependency>
-            <groupId>freemarker</groupId>
-            <artifactId>freemarker</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
     </dependencies>
 </project>
