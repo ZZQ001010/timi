@@ -46,6 +46,16 @@ public class Column {
 	
 	private boolean primaryKey;
 	
+	private boolean autoIncremented;
+	
+	public boolean isAutoIncremented() {
+		return autoIncremented;
+	}
+	
+	public void setAutoIncremented(boolean autoIncremented) {
+		this.autoIncremented = autoIncremented;
+	}
+	
 	public boolean getPrimaryKey() {
 		return primaryKey;
 	}

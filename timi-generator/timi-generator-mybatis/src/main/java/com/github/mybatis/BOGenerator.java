@@ -32,17 +32,17 @@ public class BOGenerator implements IGenerator {
     
     private void genclass2(Table tb, Configuration config) {
         try {
-            // TODO 支持更多的数据库
             GlobalConfig globalConfig = new GlobalConfig();
-            globalConfig.setDataSourceSetter(new DataSourceSetter(DbTypeOfGenerator.MYSQL, "", "", "", ""));
+            globalConfig.setDataSource("", "", "");
             globalConfig.setOutputDir(config.getOutputDirectory());
             globalConfig.setBasePackage(config.getBasePackage());
-    
+            
             TableConfigSet tableConfigSet = new TableConfigSet(globalConfig);
             TableSetter table = new TableSetter(tb.getTextName(), globalConfig, tableConfigSet);
             table.setEntityPrefix("");
             table.setTableName(tb.getTextName());
             table.initTable(tb.getColumns());
+            
             EntityFile entityFile = new EntityFile(table);
             entityFile.javaFile(new File(config.getOutputDirectory()), true);
         }catch (Exception ex) {

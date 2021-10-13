@@ -340,13 +340,13 @@ public class TableSetter {
         }
         TableField field = new TableField(this.globalConfig, columnName, this.columns.get(columnName));
 
-//        boolean primary = column.isPartOfPrimaryKey();
-//        boolean autoIncrease = column.isAutoIncremented();
-//        // 处理ID, 只取第一个，并放到list中的索引为0的位置
-//        if (primary && !haveId) {
-//            field.setCategory(autoIncrease ? FieldType.PrimaryId : FieldType.PrimaryKey);
-//            haveId = true;
-//        }
+        boolean primary = column.getPrimaryKey();
+        boolean autoIncrease = column.isAutoIncremented();
+        // 处理ID, 只取第一个，并放到list中的索引为0的位置
+        if (primary && !haveId) {
+            field.setCategory(autoIncrease ? FieldType.PrimaryId : FieldType.PrimaryKey);
+            haveId = true;
+        }
         field.initNamingAndType(column);
         return field;
     }

@@ -3,6 +3,8 @@ package com.github.mybatis.example.controller;
 import com.github.infrastructure.entity.HelloWorldEntity;
 import com.github.mybatis.example.entity.User;
 import com.github.mybatis.example.mapper.UserMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -63,6 +65,28 @@ public class HelloWorldController {
         return userMapper.selectAll();
     }
     
+    /**
+     *
+     *   mybatis plus
+     *
+     */
+    @GetMapping("selectPageFluMybatis")
+    public PageInfo selectAllUser3(int page, int offset) {
+        PageHelper.startPage(page, offset);
+        List<HelloWorldEntity> helloWorldEntities = mapper.listEntity(mapper.query().selectAll());
+        PageInfo pageInfo = new PageInfo(helloWorldEntities);
+        return pageInfo;
+    }
     
-
+    
+    /**
+     *
+     *   mybatis plus
+     *
+     */
+    @GetMapping("insertPk")
+    public void insertPk() {
+        
+    }
+    
 }
