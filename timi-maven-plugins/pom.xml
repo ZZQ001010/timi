@@ -62,7 +62,7 @@
         </dependency>
         <dependency>
             <groupId>com.github</groupId>
-            <artifactId>timi-generator-mybatis</artifactId>
+            <artifactId>timi-generator-fluent-mybatis</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>

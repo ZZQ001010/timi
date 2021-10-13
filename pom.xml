@@ -15,6 +15,7 @@
         <module>timi-generator</module>
         <module>timi-meta</module>
         <module>timi-example</module>
+        <module>timi-demo</module>
     </modules>
     <groupId>com.github</groupId>
     <artifactId>timi-parent</artifactId>
